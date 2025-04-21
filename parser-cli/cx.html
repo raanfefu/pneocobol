@@ -1,0 +1,41 @@
+
+<pre class="compilation-unit"><div class="program-unit"><div class="identification-division"><x-c> </x-c>IDENTIFICATION<x-c> </x-c>DIVISION.
+ <span id="0">PROGRAM-ID. <x-i>EXAMPLE</x-i>.
+ </span></div><div class="data-division">DATA<x-c> </x-c>DIVISION.
+ <div class="working-storage-section">WORKING-STORAGE<x-c> </x-c>SECTION.
+ <div class="data-description-entry" id="1" data-hrefs="" data-callers="">01<x-i><x-c> </x-c>SOME-ITEM</x-i>.
+    </div><div class="data-description-entry" id="2" data-hrefs="" data-callers="">05<x-i><x-c> </x-c>ITEM-NAME</x-i><x-c> </x-c>PIC<x-c> </x-c>X(20)<x-c> </x-c>VALUE<x-l><x-c> </x-c>"Item Name"</x-l>.
+    </div><div class="data-description-entry" id="4" data-hrefs="#3" data-callers="Example.COMPUTE-DISCOUNT">05<x-i><x-c> </x-c>PRICE</x-i><x-c> </x-c>PIC<x-c> </x-c>999V99<x-c> </x-c>VALUE<x-l><x-c> </x-c>99.99</x-l>.
+    </div><div class="data-description-entry" id="6" data-hrefs="#5" data-callers="Example.COMPUTE-DISCOUNT">05<x-i><x-c> </x-c>AMOUNT</x-i><x-c> </x-c>PIC<x-c> </x-c>999<x-c> </x-c>VALUE<x-l><x-c> </x-c>42</x-l>.
+ </div><div class="data-description-entry" id="7" data-hrefs="" data-callers="">01<x-i><x-c> </x-c>SOME-PERSON</x-i>.
+    </div><div class="data-description-entry" id="10" data-hrefs="#8,#9" data-callers="Example.DISPLAY-DISCOUNT,Example.CALLCICS-DISCOUNT">05<x-i><x-c> </x-c>PERSON-NAME</x-i><x-c> </x-c>PIC<x-c> </x-c>X(20)<x-c> </x-c>VALUE<x-l><x-c> </x-c>"Grace Hopper"</x-l>.
+    </div><div class="data-description-entry" id="11" data-hrefs="" data-callers="">05<x-i><x-c> </x-c>PERSON-ADDRESS</x-i>.
+       </div><div class="data-description-entry" id="12" data-hrefs="" data-callers="">10<x-i><x-c> </x-c>STREET</x-i><x-c> </x-c>PIC<x-c> </x-c>X(20).
+       </div><div class="data-description-entry" id="13" data-hrefs="" data-callers="">10<x-i><x-c> </x-c>CITY</x-i><x-c> </x-c>VALUE<x-l><x-c> </x-c>"Arlington"</x-l>.
+ </div><div class="data-description-entry" id="19" data-hrefs="#14,#15,#16,#17,#18" data-callers="Example.COMPUTE-DISCOUNT,Example.COMPUTE-DISCOUNT,Example.COMPUTE-DISCOUNT,Example.COMPUTE-DISCOUNT,Example.DISPLAY-DISCOUNT">77<x-i><x-c> </x-c>TOTAL-AMOUNT</x-i><x-c>          </x-c>PIC<x-c> </x-c>99999V99.
+ </div><div class="data-description-entry" id="21" data-hrefs="#20" data-callers="Example.COMPUTE-DISCOUNT">77<x-i><x-c> </x-c>DISCOUNT-BOUNDARY</x-i><x-c>     </x-c>PIC<x-c> </x-c>99999V99<x-c> </x-c>VALUE<x-l><x-c> </x-c>1000.00</x-l>.
+ </div><div class="data-description-entry" id="23" data-hrefs="#22" data-callers="Example.COMPUTE-DISCOUNT">77<x-i><x-c> </x-c>DISCOUNT-PERCENT</x-i><x-c>      </x-c>PIC<x-c> </x-c>99<x-c> </x-c>VALUE<x-l><x-c> </x-c>10</x-l>.
+ </div><div class="data-description-entry" id="28" data-hrefs="#24,#25,#26,#27" data-callers="Example.COMPUTE-DISCOUNT,Example.COMPUTE-DISCOUNT,Example.COMPUTE-DISCOUNT,Example.DISPLAY-DISCOUNT">77<x-i><x-c> </x-c>DISCOUNT-AMOUNT</x-i><x-c>       </x-c>PIC<x-c> </x-c>99999V99.
+ 
+ </div></div></div><div class="procedure-division">PROCEDURE<x-c> </x-c>DIVISION.
+ <div class="paragraph" id="29" data-hrefs="" data-callers=""><x-i>BATCH-DISCOUNT</x-i>.
+   <span id="30">PERFORM<a id="32" href="#31"><x-i><x-c> </x-c>COMPUTE-DISCOUNT</x-i></a></span>.
+   <span id="33">PERFORM<a id="35" href="#34"><x-i><x-c> </x-c>DISPLAY-DISCOUNT</x-i></a></span>.
+   <span id="36">PERFORM<a id="38" href="#37"><x-i><x-c> </x-c>CALLCICS-DISCOUNT</x-i></a></span>.
+   <span id="39">STOP<x-c> </x-c>RUN</span>.
+ </div><div class="paragraph" id="31" data-hrefs="#32" data-callers="Example.BATCH-DISCOUNT"><x-i>COMPUTE-DISCOUNT</x-i>.
+   MULTIPLY<a id="40" href="#6"><a id="5" href="#6"><x-i><x-c> </x-c>AMOUNT</x-i></a></a><x-c> </x-c>BY<a id="41" href="#4"><a id="3" href="#4"><x-i><x-c> </x-c>PRICE</x-i></a></a><x-c> </x-c>GIVING<a id="42" href="#19"><a id="14" href="#19"><x-i><x-c> </x-c>TOTAL-AMOUNT</x-i></a></a>.
+   IF<a id="43" href="#19"><a id="15" href="#19"><x-i><x-c> </x-c>TOTAL-AMOUNT</x-i></a></a><x-c> </x-c>&gt;<a id="44" href="#21"><a id="20" href="#21"><x-i><x-c> </x-c>DISCOUNT-BOUNDARY</x-i></a></a><x-c>
+     </x-c>MULTIPLY<a id="45" href="#19"><a id="16" href="#19"><x-i><x-c> </x-c>TOTAL-AMOUNT</x-i></a></a><x-c> </x-c>BY<a id="46" href="#23"><a id="22" href="#23"><x-i><x-c> </x-c>DISCOUNT-PERCENT</x-i></a></a><x-c> </x-c>GIVING<a id="47" href="#28"><a id="24" href="#28"><x-i><x-c> </x-c>DISCOUNT-AMOUNT</x-i></a></a><x-c>
+     </x-c>DIVIDE<x-l><x-c> </x-c>100</x-l><x-c> </x-c>INTO<a id="48" href="#28"><a id="25" href="#28"><x-i><x-c> </x-c>DISCOUNT-AMOUNT</x-i></a></a><span id="49"><x-c>
+     </x-c>SUBTRACT<a id="50" href="#28"><a id="26" href="#28"><x-i><x-c> </x-c>DISCOUNT-AMOUNT</x-i></a></a><x-c> </x-c>FROM<a id="51" href="#19"><a id="17" href="#19"><x-i><x-c> </x-c>TOTAL-AMOUNT</x-i></a></a></span>.
+ </div><div class="paragraph" id="34" data-hrefs="#35" data-callers="Example.BATCH-DISCOUNT"><x-i>DISPLAY-DISCOUNT</x-i>.
+   <span id="52">DISPLAY<a id="53" href="#10"><a id="8" href="#10"><x-i><x-c> </x-c>PERSON-NAME</x-i></a></a></span>.
+   <span id="54">DISPLAY<x-l><x-c> </x-c>"Total: "</x-l><a id="55" href="#19"><a id="18" href="#19"><x-i><x-c>, </x-c>TOTAL-AMOUNT</x-i></a></a></span>.
+   <span id="56">DISPLAY<x-l><x-c> </x-c>"Discount: "</x-l><a id="57" href="#28"><a id="27" href="#28"><x-i><x-c>, </x-c>DISCOUNT-AMOUNT</x-i></a></a></span>.
+ </div><div class="paragraph" id="37" data-hrefs="#38" data-callers="Example.BATCH-DISCOUNT"><x-i>CALLCICS-DISCOUNT</x-i>.
+   <span id="58">DISPLAY<a id="59" href="#10"><a id="9" href="#10"><x-i><x-c> </x-c>PERSON-NAME</x-i></a></a></span>.
+*&gt;EXECCICS EXEC CICS RECEIVE
+*&gt;EXECCICS INTO(WS-RESPONSE)
+*&gt;EXECCICS LENGTH(10)
+*&gt;EXECCICS END-EXEC }.</div></div></div></pre>
